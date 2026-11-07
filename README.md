@@ -44,7 +44,8 @@ Vasken Houdoverdov
 
 ## Overview & Motivation
 
-Development environments that employ autonomous coding agents like **Google Antigravity** interact with the world through a dynamic loop: taking user prompts, generating code, running terminal commands, editing files, invoking MCP tools, and returning results. While this grants the agent immense capability, it also create an additional attack surface that can be vulnerable to:
+Development environments that employ autonomous coding agents like **Google Antigravity** interact with the world through a dynamic loop: taking user prompts, generating code, running terminal commands, editing files, invoking MCP tools, and returning results. 
+While this grants the agent immense capability, it also create an additional attack surface that can be vulnerable to:
 
 1. **Direct Prompt Injections & Jailbreaks:** An adversary attempts to bypass system instructions or extract sensitive configuration.
 2. **Malicious Tool Executions:** An agent coerced by a prompt injection attempts to execute destructive shell commands (`rm -rf /`, curl exfiltration).
