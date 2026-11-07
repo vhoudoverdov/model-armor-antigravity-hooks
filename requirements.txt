@@ -1,0 +1,4 @@
+# Optional dependencies for Python Model Armor Client
+# The core scripts in this repository work out-of-the-box using the Python standard library.
+google-auth>=2.28.0
+requests>=2.31.0
