@@ -1,7 +1,7 @@
 """Google Cloud Model Armor Client for Antigravity Lifecycle Hooks
 
 Provides unified sanitization methods for user prompts and model responses
-by interfacing with Google Cloud Model Armor REST endpoints.
+by interfacing directly with Google Cloud Model Armor REST endpoints.
 """
 
 import json
@@ -32,8 +32,6 @@ def get_auth_token() -> str:
     token = os.getenv("MODEL_ARMOR_TOKEN", "")
     if token:
         return token
-    if os.getenv("MODEL_ARMOR_MOCK") == "true" or "localhost" in DEFAULT_USER_PROMPT_URL:
-        return "mock-token"
     try:
         res = subprocess.run(
             ["gcloud", "auth", "print-access-token"],
@@ -60,7 +58,7 @@ def call_model_armor(url: str, payload: Dict[str, Any]) -> Dict[str, Any]:
 
     req = urllib.request.Request(url, data=data_bytes, headers=headers, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=4) as response:
+        with urllib.request.urlopen(req, timeout=5) as response:
             return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
