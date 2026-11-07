@@ -1,6 +1,6 @@
 # Securing Antigravity Agent Lifecycle with Google Cloud Model Armor Guardrails
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Antigravity](https://img.shields.io/badge/Antigravity-Lifecycle%20Hooks-brightgreen.svg)](https://antigravity.google/docs/hooks/)
 [![Google Cloud Model Armor](https://img.shields.io/badge/Google%20Cloud-Model%20Armor-4285F4.svg)](https://docs.cloud.google.com/model-armor/overview)
 
@@ -651,5 +651,5 @@ Results: 6 Passed, 0 Failed
 
 ---
 
-**License:** Apache 2.0  
+**License:** MIT  
 **Maintained by:** Antigravity Open Source Community & Security Engineering
