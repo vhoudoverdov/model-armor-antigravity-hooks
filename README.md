@@ -312,37 +312,6 @@ Fires immediately when the user sends a message, **before** the model reasoning 
    * Injects an `"errorMessage"` explaining the safety block.
 4. If clean: proceeds to the model invocation without delay.
 
-#### Code Snippet (`scripts/hook_pre_invocation.js`):
-```javascript
-const fs = require('fs');
-const { sanitizeUserPrompt, DEFAULT_TEMPLATE } = require('./model_armor_client');
-
-async function main() {
-  const input = JSON.parse(fs.readFileSync(0, 'utf-8'));
-  const prompt = input.lastUserInput || '';
-
-  const verdict = await sanitizeUserPrompt(prompt);
-
-  if (verdict.isBlocked) {
-    // Hard block: terminate turn immediately and show error to user
-    console.log(JSON.stringify({
-      injectSteps: [
-        {
-          errorMessage: {
-            userMessage: `🚨 [Model Armor Security Gate] Blocked by template "${DEFAULT_TEMPLATE}": ${verdict.summary}`
-          }
-        }
-      ],
-      terminationBehavior: "terminate"
-    }));
-  } else {
-    // Allow through to model
-    console.log(JSON.stringify({ injectSteps: [], terminationBehavior: "" }));
-  }
-}
-main();
-```
-
 ---
 
 ### Stage 3: `PreToolUse` (Tool Argument Guard & Command Gating)
