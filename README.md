@@ -107,11 +107,11 @@ Antigravity executes in a structured execution graph. The table below illustrate
 
 ## Understanding Google Cloud Model Armor
 
-Google Cloud Model Armor provides centralized security templates that act as an AI firewall. Instead of maintaining ad-hoc regexes or brittle local heuristic filters, you configure safety policies in Google Cloud Console or Terraform.
+Google Cloud Model Armor provides centralized security templates that act as a screening mechanism for LLM prompts and responses.  These templates can match various criteria without administrators having to define manual regular expressions or patterns.
 
 ### REST Endpoint Structure
 
-Model Armor templates are exposed as regional REST endpoints. For this tutorial, we use the following realistic enterprise deployment parameters:
+Model Armor templates are exposed as regional REST endpoints. For this tutorial, we use the following deployment parameters:
 
 * **Location (`LOCATION`):** `us-central1`
 * **Google Cloud Project ID (`PROJECT_ID`):** `secops-guardrail-prod`
@@ -192,7 +192,7 @@ export MODEL_ARMOR_TOKEN=$(gcloud auth print-access-token)
 
 ## Antigravity Lifecycle Hooks Specification
 
-Antigravity reads lifecycle hook configurations from a `hooks.json` file located in the customization directory:
+Antigravity reads lifecycle hook configurations from a `hooks.json` file located in the customization directory.  The customization directory can be in one of two scopes:
 * **Workspace Scope:** `<workspace-root>/.agents/hooks.json`
 * **Global Scope:** `~/.gemini/config/hooks.json`
 
