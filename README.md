@@ -273,8 +273,6 @@ All scripts are located in `scripts/` and use the shared client `scripts/model_a
 
 This module encapsulates HTTP communication, OAuth token management, and verdict evaluation:
 
-```
-
 ---
 
 ### Stage 1: `SessionStart` (Policy Handshake)
