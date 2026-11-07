@@ -4,8 +4,7 @@
   "description": "Comprehensive tutorial and proof-of-concept for Antigravity Lifecycle Hooks integrated with Google Cloud Model Armor runtime guardrails.",
   "main": "scripts/model_armor_client.js",
   "scripts": {
-    "test": "node examples/run_tests.js",
-    "mock-server": "node examples/mock_model_armor_server.js"
+    "demo": "node examples/demo_interactive.js"
   },
   "keywords": [
     "antigravity",
