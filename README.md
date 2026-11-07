@@ -267,11 +267,7 @@ Antigravity reads lifecycle hook configurations from a `hooks.json` file located
 
 ## Proof of Concept Implementation
 
-All scripts are located in `scripts/` and use the shared client `scripts/model_armor_client.js` (or `.py`).
-
-### Shared Model Armor Client (`scripts/model_armor_client.js`)
-
-This module encapsulates HTTP communication, OAuth token management, and verdict evaluation:
+All scripts are located in `scripts/` and use the shared client `scripts/model_armor_client.js` (or `.py`).  This module encapsulates HTTP communication, OAuth token management, and verdict evaluation:
 
 ---
 
