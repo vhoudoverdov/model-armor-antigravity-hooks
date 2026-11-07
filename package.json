@@ -1,0 +1,22 @@
+{
+  "name": "antigravity-model-armor-hooks-tutorial",
+  "version": "1.0.0",
+  "description": "Comprehensive tutorial and proof-of-concept for Antigravity Lifecycle Hooks integrated with Google Cloud Model Armor runtime guardrails.",
+  "main": "scripts/model_armor_client.js",
+  "scripts": {
+    "test": "node examples/run_tests.js",
+    "mock-server": "node examples/mock_model_armor_server.js"
+  },
+  "keywords": [
+    "antigravity",
+    "model-armor",
+    "ai-safety",
+    "agentic-ai",
+    "lifecycle-hooks",
+    "google-cloud",
+    "jailbreak-detection",
+    "guardrails"
+  ],
+  "author": "Antigravity Open Source Community",
+  "license": "Apache-2.0"
+}
