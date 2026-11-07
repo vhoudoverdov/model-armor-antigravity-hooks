@@ -44,16 +44,18 @@ Vasken Houdoverdov
 
 ## Overview & Motivation
 
-Autonomous coding agents like **Google Antigravity** interact with the world through a dynamic loop: taking user prompts, generating code, running terminal commands, editing files, invoking MCP tools, and returning results. While this grants the agent immense capability, it also creates critical attack surfaces:
+Autonomous coding agents like **Google Antigravity** interact with the world through a dynamic loop: taking user prompts, generating code, running terminal commands, editing files, invoking MCP tools, and returning results. While this grants the agent immense capability, it also create an additional attack surface that can be vulnerable to:
 
 1. **Direct Prompt Injections & Jailbreaks:** An adversary attempts to bypass system instructions or extract sensitive configuration.
 2. **Malicious Tool Executions:** An agent coerced by a prompt injection attempts to execute destructive shell commands (`rm -rf /`, curl exfiltration).
 3. **Indirect Prompt Injection:** Untrusted files, web scrapings, or tool outputs fed back into the agent context attempt to hijack subsequent agent decisions.
 4. **Data Exfiltration & PII Leakage:** The agent inadvertently reveals corporate secrets, credentials, or private customer data.
 
-**Antigravity Lifecycle Hooks** allow security and platform engineering teams to insert arbitrary executable code (shell scripts, binaries, or Node.js/Python programs) directly into the agent's internal state machine.
+**Antigravity Lifecycle Hooks** allow security and platform engineering teams to insert arbitrary executable code (like shell scripts, binaries, or Node.js/Python programs) directly into the agent's interaction loop.
 
-**Google Cloud Model Armor** provides a managed, high-performance runtime guardrail engine. By combining the two, every stage of the Antigravity interaction lifecycle is screened by enterprise security policies before any irreversible action occurs.
+**Google Cloud Model Armor** provides a managed, high-performance runtime guardrail engine for screening LLM prompts and responses. 
+
+By combining Antigravity Hooks with Model Armor, every stage of the Antigravity interaction lifecycle is screened by enterprise security policies before any irreversible action occurs.
 
 ```mermaid
 flowchart TD
