@@ -7,7 +7,9 @@ Vasken Houdoverdov
 [![Google Cloud Model Armor](https://img.shields.io/badge/Google%20Cloud-Model%20Armor-4285F4.svg)](https://docs.cloud.google.com/model-armor/overview)
 
 > **Open-Source Tutorial & Proof of Concept (POC)**  
-> This repository provides a beginner-friendly tutorial to **hooks** in Antigravity and uses **Google Cloud Model Armor** as a proof-of-concept for how these hooks can embed calls to services that provide guardrails and screening for agentic prompts and responses.  In this guide, you'll see how Model Armor can be embedded into the **Google Antigravity** interaction loop so that it can provide verdict information at various points in the interaction lifecycle.
+> This repository provides a beginner-friendly tutorial to **hooks** in Antigravity and uses **Google Cloud Model Armor** as a proof-of-concept for how these hooks can embed calls to services that provide guardrails and screening for agentic prompts and responses.
+>
+> In this guide, you'll see how Model Armor can be embedded into the **Google Antigravity** interaction loop to provide a verdict at various points in the Antigravity interaction lifecycle.
 
 ---
 
