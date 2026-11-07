@@ -90,7 +90,7 @@ flowchart TD
 
 ---
 
-## Architecture: Defense-in-Depth Agent Lifecycle
+## Architecture: Matching Antigravity Hooks to Model Armor Functions
 
 Antigravity executes in a structured execution graph. The table below illustrates where each lifecycle hook fires and how Model Armor is leveraged:
 
