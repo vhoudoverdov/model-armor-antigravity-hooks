@@ -96,12 +96,12 @@ Antigravity executes in a structured execution graph. The table below illustrate
 
 | Antigravity Hook | Execution Moment | Payload Inspected | Model Armor Endpoint | Primary Protective Action |
 | :--- | :--- | :--- | :--- | :--- |
-| **`SessionStart`** | Initial session bootstrap | Metadata & Template config | Preflight check | Injects policy banner & ensures credentials |
+| **`SessionStart`** | Initial session bootstrap | Metadata & Template config | None | None |
 | **`PreInvocation`** | Before model is called | User's prompt (`lastUserInput`) | `sanitizeUserPrompt` | **Blocks jailbreaks & prompt injections** before model call |
 | **`PreToolUse`** | Before tool step executes | Tool name & arguments (`toolCall.args`) | `sanitizeUserPrompt` | **Prevents malicious commands & data exfiltration** |
 | **`PostToolUse`** | After tool step completes | Tool output & transcript entry | `sanitizeUserPrompt` | **Catches indirect prompt injections** from web/files |
 | **`PostInvocation`** | After model completes | Model generated response (`content`) | `sanitizeModelResponse` | **Suppresses PII, API keys, toxic responses** |
-| **`Stop`** | When agent loop finishes | Termination reason & idle state | Audit telemetry | Validates safety status upon exit |
+| **`Stop`** | When agent loop finishes | Termination reason & idle state | None | None |
 
 ---
 
