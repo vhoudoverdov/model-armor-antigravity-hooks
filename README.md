@@ -53,13 +53,13 @@ While this grants the agent immense capability, it also create an additional att
 3. **Indirect Prompt Injection:** Untrusted files, web scrapings, or tool outputs fed back into the agent context attempt to hijack subsequent agent decisions.
 4. **Data Exfiltration & PII Leakage:** The agent inadvertently reveals corporate secrets, credentials, or private customer data.
 
-To ensure that user interaction with Antigravity is secured against these threats, we can introduce a mechanism to "screen" the agent interaction loop at multiple points so to catch malicious behavior in a deterministically.  We can do this by taking advantage of a mechanism in Antigravity called 'hooks' in combination with a service that screens prompts and responses.
+To ensure that user interaction with Antigravity is secured against these threats, we can introduce a mechanism to "screen" the agent interaction loop at multiple points to catch malicious behavior deterministically.  We can do this by taking advantage of a mechanism in Antigravity called 'hooks' in combination with a service that screens prompts and responses, like Model Armor.
 
 **Antigravity Lifecycle Hooks** allow security and platform engineering teams to insert arbitrary executable code (like shell scripts, binaries, or Node.js/Python programs) directly into the agent's interaction loop.
 
 **Google Cloud Model Armor** provides a managed, high-performance runtime guardrail engine for screening LLM prompts and responses. 
 
-By combining Antigravity Hooks with Model Armor, every stage of the Antigravity interaction lifecycle is screened by enterprise security policies before any irreversible action occurs.
+By combining Antigravity Hooks with Model Armor, every stage of the Antigravity interaction lifecycle is screened by the Model Armor service, even if the interaction itself doesn't take place in Google Cloud.  For example, we can call the hooks to Model Armor even when working locally or in other clouds providers.
 
 ```mermaid
 flowchart TD
