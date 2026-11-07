@@ -1,4 +1,4 @@
-# Securing the Antigravity Interaction Loop with Hooks to Google Cloud Model Armor.
+# Securing the Antigravity Interaction Loop with Hooks to Model Armor.
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Antigravity](https://img.shields.io/badge/Antigravity-Lifecycle%20Hooks-brightgreen.svg)](https://antigravity.google/docs/hooks/)
