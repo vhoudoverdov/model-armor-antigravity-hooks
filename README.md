@@ -277,7 +277,7 @@ This module encapsulates HTTP communication, OAuth token management, and verdict
 
 ### Stage 1: `SessionStart` (Policy Handshake)
 
-Fires once when an Antigravity conversation initializes. It displays a security banner confirming that Model Armor real-time filtering is enabled.
+Fires once when an Antigravity conversation initializes. It displays a security banner confirming that Model Armor real-time filtering is enabled, but does not actually screen anything through the Model Armor service.  At this stage, Model Armor is not taking action.
 
 #### Stdin Received:
 ```json
