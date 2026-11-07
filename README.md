@@ -558,7 +558,6 @@ Results: 6 Passed, 0 Failed
 * [Google Cloud Model Armor Overview](https://docs.cloud.google.com/model-armor/overview)
 * [Google Cloud Model Armor: Manage Templates](https://docs.cloud.google.com/model-armor/manage-templates)
 * [Antigravity Lifecycle Hooks Guide](https://antigravity.google/docs/hooks/)
-* [Antigravity Customizations Documentation](file://~/.gemini/antigravity/builtin/skills/agy-customizations/docs/hooks.md)
 
 ---
 
