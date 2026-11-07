@@ -44,12 +44,14 @@ Vasken Houdoverdov
 
 ## Overview & Motivation
 
-Autonomous coding agents like **Google Antigravity** interact with the world through a dynamic loop: taking user prompts, generating code, running terminal commands, editing files, invoking MCP tools, and returning results. While this grants the agent immense capability, it also create an additional attack surface that can be vulnerable to:
+Development environments that employ autonomous coding agents like **Google Antigravity** interact with the world through a dynamic loop: taking user prompts, generating code, running terminal commands, editing files, invoking MCP tools, and returning results. While this grants the agent immense capability, it also create an additional attack surface that can be vulnerable to:
 
 1. **Direct Prompt Injections & Jailbreaks:** An adversary attempts to bypass system instructions or extract sensitive configuration.
 2. **Malicious Tool Executions:** An agent coerced by a prompt injection attempts to execute destructive shell commands (`rm -rf /`, curl exfiltration).
 3. **Indirect Prompt Injection:** Untrusted files, web scrapings, or tool outputs fed back into the agent context attempt to hijack subsequent agent decisions.
 4. **Data Exfiltration & PII Leakage:** The agent inadvertently reveals corporate secrets, credentials, or private customer data.
+
+To ensure that user interaction with Antigravity is secured against these threats, we can introduce a mechanism to "screen" the agent interaction loop at multiple points so that we can catch malicious behavior in a deterministic manner.
 
 **Antigravity Lifecycle Hooks** allow security and platform engineering teams to insert arbitrary executable code (like shell scripts, binaries, or Node.js/Python programs) directly into the agent's interaction loop.
 
