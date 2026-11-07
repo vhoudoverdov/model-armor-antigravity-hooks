@@ -36,7 +36,7 @@ Vasken Houdoverdov
    - [Provisioning the Model Armor Template in GCP](#provisioning-the-model-armor-template-in-gcp)
    - [Deploying the Hooks to Your Workspace](#deploying-the-hooks-to-your-workspace)
 7. [Live Attack & Defense Scenarios](#live-attack--defense-scenarios)
-8. [Local Testing with Mock Engine](#local-testing-with-mock-engine)
+8. [Interactive Testing & Demonstration](#interactive-testing--demonstration)
 9. [Production Hardening & Best Practices](#production-hardening--best-practices)
 10. [References](#references)
 
@@ -500,42 +500,27 @@ gcloud projects add-iam-policy-binding secops-guardrail-prod \
 
 ---
 
-## Local Testing with Mock Engine
+## Interactive Testing & Demonstration
 
-To test and validate all 6 lifecycle hooks without configuring GCP credentials, use the included offline mock engine:
+The repository includes an interactive command-line interface to test arbitrary prompts, commands, and completions directly against your configured Google Cloud Model Armor template:
 
 ```bash
-# Run the automated end-to-end test suite
-npm test
+# Launch interactive demonstration
+node examples/demo_interactive.js
 ```
 
-### Test Suite Output:
+### Interactive CLI Menu:
 ```text
-===============================================================
-🧪 Starting Antigravity Model Armor Hooks End-to-End Test Suite
-===============================================================
+====================================================================
+🛡️ Antigravity & Google Cloud Model Armor Interactive Demo
+Template: enterprise-agent-guardrails
+====================================================================
 
-[1/6] Testing SessionStart Hook...
-  ✅ PASS: SessionStart injects security banner
-
-[2/6] Testing PreInvocation Hook (Safe Input)...
-  ✅ PASS: Safe user prompt allowed (injectSteps empty, terminationBehavior empty)
-
-[3/6] Testing PreInvocation Hook (Jailbreak / Prompt Injection Attack)...
-  ✅ PASS: Jailbreak blocked with terminationBehavior="terminate"
-
-[4/6] Testing PreToolUse Hook (Safe Command)...
-  ✅ PASS: Safe tool call allowed (decision="allow")
-
-[5/6] Testing PreToolUse Hook (Malicious URI / Exfiltration Command)...
-  ✅ PASS: Malicious command blocked (decision="deny")
-
-[6/6] Testing Stop Hook (Clean Teardown)...
-  ✅ PASS: Stop hook allows clean exit (decision="allow")
-
-===============================================================
-Results: 6 Passed, 0 Failed
-===============================================================
+Select a lifecycle hook stage to simulate:
+  1. PreInvocation (User Prompt & Jailbreak Detection)
+  2. PreToolUse    (Command & Tool Argument Inspection)
+  3. PostInvocation (Model Completion & PII Suppression)
+  4. Exit
 ```
 
 ---
