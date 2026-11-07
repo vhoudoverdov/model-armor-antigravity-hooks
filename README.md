@@ -259,7 +259,6 @@ Antigravity reads lifecycle hook configurations from a `hooks.json` file located
 ```
 
 > [!IMPORTANT]
-> Note the structural difference:
 > * `PreToolUse` and `PostToolUse` use **grouped** arrays containing a `matcher` regex (e.g. `*` for all tools, or `run_command|write_file`).
 > * `SessionStart`, `PreInvocation`, `PostInvocation`, and `Stop` are **flat** lists of hook handler objects.
 > * Hook commands receive inputs as a JSON payload on **stdin** and write their response as JSON to **stdout**.
